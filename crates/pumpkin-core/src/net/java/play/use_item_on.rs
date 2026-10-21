@@ -125,6 +125,7 @@ impl JavaClient {
             );
             if result.consumes_action() {
                 // TODO: Trigger ANY_BLOCK_USE Criteria
+                inventory.set_stack_in_hand(hand, item);
 
                 if matches!(result, BlockActionResult::SuccessServer) {
                     player.swing_hand(hand, true);
